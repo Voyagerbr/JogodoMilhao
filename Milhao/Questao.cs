@@ -3,9 +3,9 @@ namespace Milhao;
 public class Questao
 {
     
-    private int IdPage {get;set;}
+    private int IdPage ;
 
-    private int Difficulty;
+    private int DifficultyLvl;
 
      public string? Question;
 
@@ -19,7 +19,16 @@ public class Questao
     
     public string? Answer05;
 
-    public bool CorrectAnswer;
+    public int  CorrectAnswer;
+    private Label Labelpergunta;
+    private Button Button1;
+    private Button Button2;
+    private Button Button3;
+    private Button Button4;
+    private Button Button5;
+
+    
+
  
     
 }

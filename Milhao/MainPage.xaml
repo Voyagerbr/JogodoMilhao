@@ -6,5 +6,9 @@
 
     
 <Button Text="AAAAAAAI"
-Clicked = "Gozei"/>
+    Clicked="GozeiIsClicked"
+    HeightRequest="70"
+    WidthRequest="70"
+    VerticalOptions="End"
+    HorizontalOptions="Center"/>
 </ContentPage>
