@@ -8,7 +8,7 @@ public partial class MainPage : ContentPage
 	{
 		InitializeComponent();
 	}
-	public void GozeiIsClicked(object sender, EventArgs e)
+	public void Gozei(object sender, EventArgs e)
 	{
 		Navigation.PushAsync(new GamePage());
 	}

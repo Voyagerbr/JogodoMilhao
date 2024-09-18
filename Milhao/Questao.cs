@@ -26,6 +26,16 @@ public class Questao
     private Button Button3;
     private Button Button4;
     private Button Button5;
+    blic void Desenhar()
+        {
+            Labelpergunta.Text = labelpergunta;
+            ButtonResposta1.Text = button1;
+            ButtonResposta2.Text = button2;
+            ButtonResposta3.Text = button3;
+            ButtonResposta4.Text = button4;
+            ButtonResposta5.Text = button5;
+        }
+
 
     
 

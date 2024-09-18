@@ -4,11 +4,23 @@
              x:Class="Milhao.MainPage"
              Shell.NavBarIsVisible="False">
 
-    
-<Button Text="AAAAAAAI"
-    Clicked="GozeiIsClicked"
-    HeightRequest="70"
-    WidthRequest="70"
-    VerticalOptions="End"
-    HorizontalOptions="Center"/>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="90"/>
+        </Grid.RowDefinitions>
+
+        <Image Source="main.png"
+        Grid.RowSpan="2"
+        Aspect="AspectFill"/>
+
+        <Button Text="Jogar"
+                BackgroundColor="LightGray"
+                Clicked="Gozei"
+                HeightRequest="70"
+                WidthRequest="90"
+                Grid.Row="1"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"/>
+    </Grid>
 </ContentPage>
