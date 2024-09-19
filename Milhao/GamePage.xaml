@@ -5,12 +5,44 @@
              Shell.NavBarIsVisible="False">
 
     <Grid>
-    
-    
-    
-    
-    
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="90"/>
+            <RowDefinition Height="90"/>
+            <RowDefinition Height="90"/>
+            <RowDefinition Height="90"/>
+            <RowDefinition Height="90"/>
+            <RowDefinition Height="90"/>
+            
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image Source="game.png"
+               Grid.Row="0"
+               Grid.RowSpan="7"/>
+        <Frame>
+
+        </Frame>
+
+        <StackLayout>
+            <Grid>
+
+            </Grid>
+
+
+        </StackLayout>
+
+
+
+
     </Grid>
+
 
 
 </ContentPage>
