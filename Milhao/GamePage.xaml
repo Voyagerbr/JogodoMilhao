@@ -25,8 +25,11 @@
 
         <Image Source="game.png"
                Grid.Row="0"
-               Grid.RowSpan="7"/>
-        <Frame>
+               Grid.RowSpan="7"
+               Grid.Column="0"
+               Grid.ColumnSpan="3"/>
+        
+        <Frame Grid.Row="2">
 
         </Frame>
 
