@@ -10,13 +10,13 @@
             <RowDefinition Height="90"/>
         </Grid.RowDefinitions>
 
-        <Image Source="main.png"
+        <Image Source="peixe.jpg"
         Grid.RowSpan="2"
-        Aspect="AspectFill"/>
+        Aspect="Fill"/>
 
         <Button Text="Jogar"
-                BackgroundColor="LightGray"
-                Clicked="Gozei"
+                BackgroundColor="#eeff3333"
+                Clicked="Tremi"
                 HeightRequest="70"
                 WidthRequest="90"
                 Grid.Row="1"

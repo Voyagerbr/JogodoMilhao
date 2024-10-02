@@ -5,12 +5,12 @@ public class Questao
 
 
 
-    public string? Questions { get; set; }
-    public string? Answer01 { get; set; }
-    public string? Answer02 { get; set; }
-    public string? Answer03 { get; set; }
-    public string? Answer04 { get; set; }
-    public string? Answer05 { get; set; }
+    public string? Question { get; set; }
+    public string? Answer1 { get; set; }
+    public string? Answer2 { get; set; }
+    public string? Answer3 { get; set; }
+    public string? Answer4 { get; set; }
+    public string? Answer5 { get; set; }
     public int CorrectAnswer { get; set; } = 0;
     private int DifficultyLvl { get; set; } = 0;
 
@@ -66,7 +66,41 @@ public class Questao
     }
     //=============================================================================
 
+ private Button QualButton(int r){
+        if(r == 1){
+            return btnAnswer01;
+        }
+        else if(r == 2){
+            return btnAnswer02;
+        }
+        else if (r == 3){
+            return btnAnswer03;
+        }
+        else if (r == 4){
+            return btnAnswer04;
+        }
+        else if (r == 5 ){
+            return btnAnswer05;
+        }
+        else{
+            return null;
+        }
+    }
+     public bool VerificaResposta(int rr){
+        if(CorrectAnswer == rr){
+            var button = QualButton(rr);
+            button.BackgroundColor = Colors.Green; //"#a1c9ae";
+            return true;
+        }
+        else{
+            var buttonCorreto = QualButton(CorrectAnswer);
+            var buttonIncorreto = QualButton(rr);
+            buttonCorreto.BackgroundColor = Colors.Green; //"#a1c9ae";
+            buttonIncorreto.BackgroundColor = Colors.Red; //#e88e8e;
 
+            return false;
+        }
+    }
 
 
 }
