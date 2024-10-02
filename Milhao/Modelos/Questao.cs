@@ -6,11 +6,11 @@ public class Questao
 
 
     public string? Question { get; set; }
-    public string? Answer1 { get; set; }
-    public string? Answer2 { get; set; }
-    public string? Answer3 { get; set; }
-    public string? Answer4 { get; set; }
-    public string? Answer5 { get; set; }
+    public string? Answer01 { get; set; }
+    public string? Answer02 { get; set; }
+    public string? Answer03 { get; set; }
+    public string? Answer04 { get; set; }
+    public string? Answer05 { get; set; }
     public int CorrectAnswer { get; set; } = 0;
     private int DifficultyLvl { get; set; } = 0;
 
@@ -63,6 +63,14 @@ public class Questao
         this.btnAnswer04!.TextColor = Colors.Black;
         this.btnAnswer05!.BackgroundColor = Colors.DarkBlue;
         this.btnAnswer05!.TextColor = Colors.Black;
+    }
+     public void ConfiguraEstruturaDesenho (Label labelpergunta, Button button1, Button button2, Button button3, Button button4, Button button5){
+        LabelPergunta = labelpergunta;
+        ButtonResposta1 = button1;
+        ButtonResposta2 = button2;
+        ButtonResposta3 = button3;
+        ButtonResposta4 = button4;
+        ButtonResposta5 = button5;
     }
     //=============================================================================
 
