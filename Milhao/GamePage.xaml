@@ -5,7 +5,7 @@
              Shell.NavBarIsVisible="False"
              BackgroundColor="#FFFFFF">
 
-     <Grid>
+        <Grid>
                 <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
@@ -35,10 +35,11 @@
                        Grid.ColumnSpan="2"
                        BackgroundColor="Black"
                        CornerRadius="10"
-                       HeightRequest="50"
+                       HeightRequest="70"
                        Margin="10,0">
                         <Label Text="Pontuação"
                                TextColor="White"
+                               
                                HorizontalOptions="Start"
                                HorizontalTextAlignment="Start"
                                VerticalTextAlignment="Center"
@@ -51,11 +52,12 @@
                        Grid.Column="2"
                        BackgroundColor="Black"
                        CornerRadius="10"
-                       HeightRequest="50"
+                       HeightRequest="70"
                        Margin="10,0">
                         <Label Text="Nível:"
                                TextColor="White"
                                HorizontalOptions="Start"
+                               
                                HorizontalTextAlignment="Start"
                                VerticalTextAlignment="Center"
                                FontSize="20"
@@ -71,6 +73,7 @@
                        Margin="10,0,10,10">
                         <Label Text="Pergunta"
                                TextColor="White"
+                               x:Name="labelQuestion"
                                HorizontalOptions="Center"
                                HorizontalTextAlignment="Center"
                                VerticalTextAlignment="Center"
@@ -82,7 +85,8 @@
 
                 <Button Grid.Row="3"
                         Grid.ColumnSpan="3"
-                        Text="Resposta 1"
+                        x:Name="btnAnswer01"
+                        Clicked="OnBtnResposta01Clicked"
                         BackgroundColor="#ff3333"
                         TextColor="White"
                         HeightRequest="70"
@@ -92,8 +96,9 @@
 
                 <Button Grid.Row="4"
                         Grid.ColumnSpan="3"
-                        Text="Resposta 2"
+                        x:Name="btnAnswer02"
                         BackgroundColor="#ff3333"
+                        Clicked="OnBtnResposta02Clicked"
                         TextColor="White"
                         HeightRequest="70"
                         CornerRadius="10"
@@ -102,7 +107,8 @@
 
                 <Button Grid.Row="5"
                         Grid.ColumnSpan="3"
-                        Text="Resposta 3"
+                        x:Name="btnAnswer03"
+                        Clicked="OnBtnResposta03Clicked"
                         BackgroundColor="#ff3333"
                         TextColor="White"
                         HeightRequest="70"
@@ -112,18 +118,20 @@
 
                 <Button Grid.Row="6"
                         Grid.ColumnSpan="3"
-                        Text="Resposta 4"
+                        x:Name="btnAnswer04"
                         BackgroundColor="#ff3333"
+                        Clicked="OnBtnResposta04Clicked"
                         TextColor="White"
                         HeightRequest="70"
                         CornerRadius="10"
                         Margin="10,0"/>
-
+        
 
                 <Button Grid.Row="7"
                         Grid.ColumnSpan="3"
-                        Text="Resposta 5"
+                        x:Name="btnAnswer05"
                         BackgroundColor="#ff3333"
+                        Clicked="OnBtnResposta05Clicked"
                         TextColor="White"
                         HeightRequest="70"
                         CornerRadius="10"

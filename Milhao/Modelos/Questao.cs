@@ -1,3 +1,6 @@
+
+using Milhao;
+
 namespace Modelos;
 
 public class Questao
@@ -14,7 +17,7 @@ public class Questao
     public int CorrectAnswer { get; set; } = 0;
     private int DifficultyLvl { get; set; } = 0;
 
-    Label? labelQuestions;
+    Label? labelQuestion;
     Button? btnAnswer01;
     Button? btnAnswer02;
     Button? btnAnswer03;
@@ -23,19 +26,38 @@ public class Questao
 
     //=============================================================================
 
-    public void Desenhar()
+    public void Desenha()
     {
-        this.labelQuestions!.Text = this.Questions;
+        this.labelQuestion!.Text = this.Question;
         this.btnAnswer01!.Text = this.Answer01;
         this.btnAnswer02!.Text = this.Answer02;
         this.btnAnswer03!.Text = this.Answer03;
         this.btnAnswer04!.Text = this.Answer04;
         this.btnAnswer05!.Text = this.Answer05;
+
+        btnAnswer01.BackgroundColor = Colors.LightGray;
+        btnAnswer02.BackgroundColor = Colors.LightGray;
+        btnAnswer03.BackgroundColor = Colors.LightGray;
+        btnAnswer04.BackgroundColor = Colors.LightGray;
+        btnAnswer05.BackgroundColor = Colors.LightGray;
+        btnAnswer01.TextColor = Colors.Black;
+        btnAnswer02.TextColor = Colors.Black;
+        btnAnswer03.TextColor = Colors.Black;
+        btnAnswer04.TextColor = Colors.Black;
+        btnAnswer05.TextColor = Colors.Black;
+
+
+
     }
     //=============================================================================
-    public Questao(string Questions, string Answer01, string Answer02, string Answer03, string Answer04, string Answer05, int CorrectAnswer)
+
+    public Questao()
     {
-        this.Questions = Questions;
+
+    }
+    public Questao(string Question, string Answer01, string Answer02, string Answer03, string Answer04, string Answer05, int CorrectAnswer)
+    {
+        this.Question = Question;
         this.Answer01 = Answer01;
         this.Answer02 = Answer02;
         this.Answer03 = Answer03;
@@ -44,63 +66,55 @@ public class Questao
         this.CorrectAnswer = CorrectAnswer;
     }
     //=============================================================================
-    public void Desenha()
-    {
-        this.labelQuestions!.Text = this.Questions;
-        this.btnAnswer01!.Text = this.Answer01;
-        this.btnAnswer02!.Text = this.Answer02;
-        this.btnAnswer03!.Text = this.Answer03;
-        this.btnAnswer04!.Text = this.Answer04;
-        this.btnAnswer05!.Text = this.Answer05;
 
-        this.btnAnswer01!.BackgroundColor = Colors.DarkBlue;
-        this.btnAnswer01!.TextColor = Colors.Black;
-        this.btnAnswer02!.BackgroundColor = Colors.DarkBlue;
-        this.btnAnswer02!.TextColor = Colors.Black;
-        this.btnAnswer03!.BackgroundColor = Colors.DarkBlue;
-        this.btnAnswer03!.TextColor = Colors.Black;
-        this.btnAnswer04!.BackgroundColor = Colors.DarkBlue;
-        this.btnAnswer04!.TextColor = Colors.Black;
-        this.btnAnswer05!.BackgroundColor = Colors.DarkBlue;
-        this.btnAnswer05!.TextColor = Colors.Black;
-    }
-     public void ConfiguraEstruturaDesenho (Label labelpergunta, Button button1, Button button2, Button button3, Button button4, Button button5){
-        LabelPergunta = labelpergunta;
-        ButtonResposta1 = button1;
-        ButtonResposta2 = button2;
-        ButtonResposta3 = button3;
-        ButtonResposta4 = button4;
-        ButtonResposta5 = button5;
+    public void ConfigurarDesenho(Label labelQuestion, Button btnAnswer01, Button btnAnswer02, Button btnAnswer03, Button btnAnswer04, Button btnAnswer05)
+    {
+        this.labelQuestion = labelQuestion;
+        this.btnAnswer01 = btnAnswer01;
+        this.btnAnswer02 = btnAnswer02;
+        this.btnAnswer03 = btnAnswer03;
+        this.btnAnswer04 = btnAnswer04;
+        this.btnAnswer05 = btnAnswer05;
     }
     //=============================================================================
 
- private Button QualButton(int r){
-        if(r == 1){
+    private Button QualButton(int r)
+    {
+        if (r == 1)
+        {
             return btnAnswer01;
         }
-        else if(r == 2){
+        else if (r == 2)
+        {
             return btnAnswer02;
         }
-        else if (r == 3){
+        else if (r == 3)
+        {
             return btnAnswer03;
         }
-        else if (r == 4){
+        else if (r == 4)
+        {
             return btnAnswer04;
         }
-        else if (r == 5 ){
+        else if (r == 5)
+        {
             return btnAnswer05;
         }
-        else{
+        else
+        {
             return null;
         }
     }
-     public bool VerificaResposta(int rr){
-        if(CorrectAnswer == rr){
+    public bool VerificaResposta(int rr)
+    {
+        if (CorrectAnswer == rr)
+        {
             var button = QualButton(rr);
             button.BackgroundColor = Colors.Green; //"#a1c9ae";
             return true;
         }
-        else{
+        else
+        {
             var buttonCorreto = QualButton(CorrectAnswer);
             var buttonIncorreto = QualButton(rr);
             buttonCorreto.BackgroundColor = Colors.Green; //"#a1c9ae";
@@ -108,6 +122,50 @@ public class Questao
 
             return false;
         }
+    }
+
+    public bool EstaCorreto(int resposta)
+    {
+        if (CorrectAnswer == resposta)
+        {
+            DesenhaCorreto(resposta);
+            return true;
+        }
+        else
+        {
+            DesenhaIncorreto(resposta);
+            return false;
+        }
+    }
+    private void DesenhaCorreto(int resposta)
+    {
+        var button = QualButton(resposta);
+        DesenhaButtonCorreto(button!);
+    }
+
+    private void DesenhaIncorreto(int resposta)
+    {
+        var buttonCorreta = QualButton(CorrectAnswer);
+        var buttonResposta = QualButton(resposta);
+        DesenhaButtonIncorreto(buttonCorreta!, buttonResposta!);
+         Application.Current.MainPage = new MainPage();
+    }
+
+    private void DesenhaButtonCorreto(Button button)
+    {
+        button.BackgroundColor = Colors.Green;
+        button.TextColor = Colors.White;
+
+
+    }
+
+    private void DesenhaButtonIncorreto(Button buttonCorreto, Button buttonResposta)
+    {
+        buttonCorreto.BackgroundColor = Colors.Yellow;
+        buttonCorreto.TextColor = Colors.White;
+
+        buttonResposta.BackgroundColor = Colors.Red;
+        buttonResposta.TextColor = Colors.White;
     }
 
 

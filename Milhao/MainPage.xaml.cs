@@ -10,7 +10,7 @@ public partial class MainPage : ContentPage
 	}
 	public void Tremi(object sender, EventArgs e)
 	{
-		Navigation.PushAsync(new GamePage());
+		 Application.Current.MainPage = new GamePage();
 	}
 }
 
