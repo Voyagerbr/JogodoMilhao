@@ -42,7 +42,7 @@ public partial class GamePage : ContentPage
     int Pulei = 3;
     void OnAjudaPuloClicked(object s, EventArgs e)
     {
-        if (Pulei == 0){
+        if (Pulei == 1){
              (s as Button).IsVisible = false;
         }
        else {
