@@ -148,14 +148,12 @@ public class Questao
         var buttonCorreta = QualButton(CorrectAnswer);
         var buttonResposta = QualButton(resposta);
         DesenhaButtonIncorreto(buttonCorreta!, buttonResposta!);
-         Application.Current.MainPage = new MainPage();
     }
 
     private void DesenhaButtonCorreto(Button button)
     {
         button.BackgroundColor = Colors.Green;
         button.TextColor = Colors.White;
-
 
     }
 

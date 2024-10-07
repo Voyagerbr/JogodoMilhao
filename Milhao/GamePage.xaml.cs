@@ -1,4 +1,3 @@
-
 using Modelos;
 namespace Milhao;
 
@@ -39,4 +38,18 @@ public partial class GamePage : ContentPage
     {
         gerenciador!.VerificaCorreto(5);
     }
+
+    int Pulei = 3;
+    void OnAjudaPuloClicked(object s, EventArgs e)
+    {
+        if (Pulei == 0){
+             (s as Button).IsVisible = false;
+        }
+       else {
+         gerenciador.ProximaQuestao();
+         Pulei --;
+       }
+       
+    }
+
 }
