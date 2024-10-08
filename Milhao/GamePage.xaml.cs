@@ -42,13 +42,17 @@ public partial class GamePage : ContentPage
     int Pulei = 3;
     void OnAjudaPuloClicked(object s, EventArgs e)
     {
+        Button btn = s as Button;
+        
         if (Pulei == 1){
-             (s as Button).IsVisible = false;
+            btn.IsVisible = false;
+            gerenciador.ProximaQuestao();
         }
        else {
          gerenciador.ProximaQuestao();
          Pulei --;
        }
+       btn.Text = $"Pular {Pulei}x";
        
     }
 

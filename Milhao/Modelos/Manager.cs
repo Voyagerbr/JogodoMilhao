@@ -1133,7 +1133,10 @@ public class Manager
     {
       await Task.Delay(1500);
       ProximaQuestao();
-
+    }
+   else{ 
+ await Task.Delay(1500);
+      ProximaQuestao();
     }
   }
 
